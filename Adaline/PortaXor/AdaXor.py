@@ -3,51 +3,72 @@ import numpy as np
 def sigmoide(x):
     return 1 / (1 + np.exp(-x))
 
-def derivada_sigmoide(x):
+def derivadaSigmoide(x):
     return x * (1 - x)
 
-X = np.array([[0, 0], 
-              [0, 1],
-              [1, 0], 
-              [1, 1]])
 
-y = np.array([[0], 
-              [1], 
-              [1], 
-              [0]])
+def gerarAleat(selet):
+            pesosEntradaOculta = 2 * np.random.random((2, 4)) - 1
+            pesosOcultaSaida = 2 * np.random.random((4, 1)) - 1
+            biasEntrada = 2 * np.random.random((2, 4)) - 1
+            biasSaida = 2 * np.random.random((4, 1)) - 1
+            return pesosEntradaOculta, pesosOcultaSaida, biasEntrada, biasSaida
 
-np.random.seed(1)
 
-pesos_entrada_oculta = 2 * np.random.random((2, 4)) - 1
-pesos_oculta_saida = 2 * np.random.random((4, 1)) - 1
 
-taxa_aprendizado = 0.1
-epocas = 10000
+def main():
+    X = np.array([[0, 0], 
+                [0, 1],
+                [1, 0], 
+                [1, 1]])
 
-for i in range(epocas):
-    #essa é a camda de entrada/indo pra oculta
-    entrada_oculta = np.dot(X, pesos_entrada_oculta)
-    saida_oculta = sigmoide(entrada_oculta)
+    y = np.array([[0], 
+                [1], 
+                [1], 
+                [0]])
 
-    #essa é a cmad indo da oculta pra saida comum
-    #lembrar que da pra fazer com np.dot pq ele faz o produto vet automaticamente usando essa funcao do numpy
-    entrada_saida = np.dot(saida_oculta, pesos_oculta_saida)
-    saida_prevista = sigmoide(entrada_saida)
+    np.random.seed(1)
 
-    #calculo do erro comum :D
-    erro = y - saida_prevista
-    
-    #
-    delta_saida = erro * derivada_sigmoide(saida_prevista)
-    erro_camada_oculta = delta_saida.dot(pesos_oculta_saida.T)
-    delta_oculta = erro_camada_oculta * derivada_sigmoide(saida_oculta)
+    pesosEntradaOculta, pesosOcultaSaida, biasEntrada, biasSaida = gerarAleat(2)
 
-    #
-    pesos_oculta_saida += saida_oculta.T.dot(delta_saida) * taxa_aprendizado
-    pesos_entrada_oculta += X.T.dot(delta_oculta) * taxa_aprendizado
 
-print("Saída final após treino:")
-print(saida_prevista)
-print("\n")
-#aqui ele arredonda automaticmanete, lembrar de usar 2,4 e 4,1 nos pesos pq usando 2,1 2,1 n tava convergindo 
-print(np.round(saida_prevista))
+    taxaAprendizado = 0.1
+    epocas = 10000
+
+    for i in range(epocas):
+        #essa é a camda de entrada/indo pra oculta
+        entradaOculta = np.dot(X, pesosEntradaOculta)
+        saidaOculta = sigmoide(entradaOculta)
+
+        #essa é a cmad indo da oculta pra saida comum
+        #lembrar que da pra fazer com np.dot pq ele faz o produto vet automaticamente usando essa funcao do numpy
+        entradaSaida = np.dot(saidaOculta, pesosOcultaSaida)
+        saidaPrevista = sigmoide(entradaSaida)
+
+        #calculo do erro comum :D
+        erro = y - saidaPrevista
+        
+        #calc dos erros (?)
+        deltaSaida = erro * derivadaSigmoide(saidaPrevista)
+        erroCamadaOculta = deltaSaida.dot(pesosOcultaSaida.T)
+        deltaOculta = erroCamadaOculta * derivadaSigmoide(saidaOculta)
+
+        #atualizacao Pesos
+        pesosOcultaSaida += saidaOculta.T.dot(deltaSaida) * taxaAprendizado
+        pesosEntradaOculta += X.T.dot(deltaOculta) * taxaAprendizado
+
+
+        
+        #lembrar do bias :(
+        #print(pesosOcultaSaida)
+        #print(pesosEntradaOculta)
+
+
+    print("Saida final apos treino:D \n")
+    print(saidaPrevista)
+    print("\n\n")
+    #aqui ele arredonda automaticmanete, lembrar de usar 2,4 e 4,1 nos pesos pq usando 2,1 2,1 n tava convergindo 
+    print(np.round(saidaPrevista))
+    #MULTI LAYER PERCEPTRON 
+if __name__ == "__main__":
+    main()
