@@ -76,8 +76,8 @@ A ideia é que se a gente multiplica o cosseno, a gente acelera essa função e 
 
 \[
 L = -\frac{1}{N} \sum_{i=1}^{N} \log \left( 
-\frac{e^{\|\mathbf{x}_i\|\psi(\theta_{y_i,i})}} 
-{e^{\|\mathbf{x}_i\|\psi(\theta_{y_i,i})} + \sum_{j \ne y_i} e^{\|\mathbf{x}_i\|\cos(\theta_{j,i})}} 
+\frac{e^{\|\mathbf{x}_i\|\psi(m\theta_{y_i,i})}} 
+{e^{\|\mathbf{x}_i\|\psi(m\theta_{y_i,i})} + \sum_{j \ne y_i} e^{\|\mathbf{x}_i\|\cos(\theta_{j,i})}} 
 \right)
 \]
 Analisando cada termo:
