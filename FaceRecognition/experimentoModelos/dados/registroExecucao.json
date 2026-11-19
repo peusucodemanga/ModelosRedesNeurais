@@ -1,0 +1,120 @@
+{
+  "modelosSolicitados": [
+    "buffalo_l",
+    "buffalo_m",
+    "buffalo_s",
+    "buffalo_sc",
+    "antelopev2"
+  ],
+  "escalasPercentuais": [
+    100,
+    80,
+    60,
+    40,
+    20,
+    10
+  ],
+  "limiarReconhecimento": 0.3,
+  "margemMinimaCandidato": 0.05,
+  "limiarDeteccao": 0.5,
+  "sobreposicaoMinima": 0.3,
+  "tamanhoDetector": [
+    640,
+    640
+  ],
+  "redimensionamento": "cv2.INTER_AREA; cada redução parte da imagem original",
+  "extracaoEmbedding": "Padrão InsightFace (rosto.embedding)",
+  "pareamentoIdentidades": "Algoritmo Húngaro 1-para-1 por foto (linear_sum_assignment) com limiar e margem",
+  "provedor": "CPUExecutionProvider",
+  "versoes": {
+    "insightface": "0.7.3",
+    "numpy": "2.4.2",
+    "matplotlib": "3.10.8",
+    "scipy": "1.16.3"
+  },
+  "resumosEntradasSha256": {
+    "imagensSala\\sala1.jpeg": "c9d4ba76f9ee19f03af80b9f0a6eb01b5052ac73f3ba6e686818163d896946df",
+    "imagensSala\\sala2.jpeg": "ee677fd80f485b504072341b9caa429f3d8c871508c8c81650cb5daf58a76d4f",
+    "imagensSala\\sala3.jpeg": "cd70bc69941407f0716ab8b5b63209ea5076de55f5b9c2696056ebce92eb82c4",
+    "imagensSala\\sala4.jpeg": "f5d1d52d217c370499dc08b17089236e0a9163d8647332b86937b4d33f6c74ad",
+    "imagensSala\\sala5.jpeg": "c04cb380ac5a4b0a46557c885ea53c58af582059bcecef316e314f6b4214c95b",
+    "imagensSala\\sala6.jpeg": "68e6b458d30579faf6271ad384fc7f951eb326ac32bc5a6cdf52900e5ae98f29",
+    "rostos\\ArthurViny.jpg": "1c1db30e7eac56b4ab2e266b8cd13cba731c40648977cbf134a9fa618e48cf29",
+    "rostos\\Bruno.jpg": "9fd70822025a738d530f34cd28a81a6a2bed3bb8bf528bdb76a067d0ae5bb805",
+    "rostos\\caio.jpg": "1a9adce4b46bcb525c1c02e85718fbfa9e2468f2ba8af68c36ac1902dfc88b30",
+    "rostos\\dimitri.jpeg": "192b248bcaa9e61f7f88ac18a5872fb5a8e7e9ce302ac4c9db5694802fba17c5",
+    "rostos\\felipe2.jpg": "ced3035205401f67f76938bb4097f852325cfe3935776d52641a363f34a38cd4",
+    "rostos\\felipeFullsta.jpg": "6d6095ff1919e7e36176a8bbca6c6325995705fd5630df5446bf3bc001f8efcc",
+    "rostos\\gustavo.jpg": "efeedb416ace28fd46ae15eb24646f70c7b7ae33fc7a38c6f401845d4a6510f3",
+    "rostos\\JoaoPedro.jpeg": "b5c2f156dc6396b793a8f7ad203e7933fad0ddd959729eadd97fb0880c91fccb",
+    "rostos\\joseMarcos.jpg": "9f6147127ebe03fd96a803f126da9a3fccd74b791576d47b17712ac3a218355b",
+    "rostos\\luan.jpg": "d5d0a4415c16fd220562e7c28169628991bad608509d8087a6ca864fa5f933bf",
+    "rostos\\nayara.jpg": "c63de2d8b4766d42e516c101944fa15c4d960a302e91d4090eb2699a77f3d839",
+    "rostos\\pericles.jpg": "f97dc750e40a07e778d87e89c1bc41df7d667648690822eb319db3914265b7e6",
+    "rostos\\raissa.jpeg": "3960ff5f5a081cac15638be118242e0d37887362c8f52e9159b2a12dc3dad4fc",
+    "anotacoesSalas.json": "671fd8a74bf1ec74b7078f6e76ed439e96a4d2659c4ec2f83c84ef086f424061"
+  },
+  "quantidadeIdentidades": 12,
+  "quantidadeReferencias": 13,
+  "equivalenciasIdentidades": {
+    "felipe2": "felipe",
+    "felipeFullsta": "felipe"
+  },
+  "regraMultiplasReferencias": "Maior similaridade entre referências da mesma pessoa",
+  "estadosModelos": {
+    "buffalo_l": {
+      "concluido": true,
+      "tempoTotalSegundos": 37.84240350000255
+    },
+    "buffalo_m": {
+      "concluido": true,
+      "tempoTotalSegundos": 33.905284100001154
+    },
+    "buffalo_s": {
+      "concluido": true,
+      "tempoTotalSegundos": 6.447713199999271
+    },
+    "buffalo_sc": {
+      "concluido": true,
+      "tempoTotalSegundos": 4.668815999997605
+    },
+    "antelopev2": {
+      "concluido": true,
+      "tempoTotalSegundos": 185.69114700000137
+    }
+  },
+  "resumosModelosSha256": {
+    "buffalo_l": {
+      "1k3d68.onnx": "df5c06b8a0c12e422b2ed8947b8869faa4105387f199c477af038aa01f9a45cc",
+      "2d106det.onnx": "f001b856447c413801ef5c42091ed0cd516fcd21f2d6b79635b1e733a7109dbf",
+      "det_10g.onnx": "5838f7fe053675b1c7a08b633df49e7af5495cee0493c7dcf6697200b85b5b91",
+      "genderage.onnx": "4fde69b1c810857b88c64a335084f1c3fe8f01246c9a191b48c7bb756d6652fb",
+      "w600k_r50.onnx": "4c06341c33c2ca1f86781dab0e829f88ad5b64be9fba56e56bc9ebdefc619e43"
+    },
+    "buffalo_m": {
+      "1k3d68.onnx": "df5c06b8a0c12e422b2ed8947b8869faa4105387f199c477af038aa01f9a45cc",
+      "2d106det.onnx": "f001b856447c413801ef5c42091ed0cd516fcd21f2d6b79635b1e733a7109dbf",
+      "det_2.5g.onnx": "041f73f47371333d1d17a6fee6c8ab4e6aecabefe398ff32cca4e2d5eaee0af9",
+      "genderage.onnx": "4fde69b1c810857b88c64a335084f1c3fe8f01246c9a191b48c7bb756d6652fb",
+      "w600k_r50.onnx": "4c06341c33c2ca1f86781dab0e829f88ad5b64be9fba56e56bc9ebdefc619e43"
+    },
+    "buffalo_s": {
+      "1k3d68.onnx": "df5c06b8a0c12e422b2ed8947b8869faa4105387f199c477af038aa01f9a45cc",
+      "2d106det.onnx": "f001b856447c413801ef5c42091ed0cd516fcd21f2d6b79635b1e733a7109dbf",
+      "det_500m.onnx": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a",
+      "genderage.onnx": "4fde69b1c810857b88c64a335084f1c3fe8f01246c9a191b48c7bb756d6652fb",
+      "w600k_mbf.onnx": "9cc6e4a75f0e2bf0b1aed94578f144d15175f357bdc05e815e5c4a02b319eb4f"
+    },
+    "buffalo_sc": {
+      "det_500m.onnx": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a",
+      "w600k_mbf.onnx": "9cc6e4a75f0e2bf0b1aed94578f144d15175f357bdc05e815e5c4a02b319eb4f"
+    },
+    "antelopev2": {
+      "1k3d68.onnx": "df5c06b8a0c12e422b2ed8947b8869faa4105387f199c477af038aa01f9a45cc",
+      "2d106det.onnx": "f001b856447c413801ef5c42091ed0cd516fcd21f2d6b79635b1e733a7109dbf",
+      "genderage.onnx": "4fde69b1c810857b88c64a335084f1c3fe8f01246c9a191b48c7bb756d6652fb",
+      "glintr100.onnx": "4ab1d6435d639628a6f3e5008dd4f929edf4c4124b1a7169e1048f9fef534cdf",
+      "scrfd_10g_bnkps.onnx": "5838f7fe053675b1c7a08b633df49e7af5495cee0493c7dcf6697200b85b5b91"
+    }
+  }
+}
